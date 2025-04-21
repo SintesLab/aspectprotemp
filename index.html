@@ -3,8 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Подготвяме нещо специално за вас</title>
+    <title>Подготвяме нещо специално за вас | Аспект Про България</title>
+    <meta name="description" content="Аспект Про България ЕООД – софтуерни и технически решения, създадени за растеж. Контакти, продукти и адрес." />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Аспект Про България ЕООД",
+      "image": "https://www.aspectprobulgaria.com/aspro.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Радост № 9, вх. A, маг. 3",
+        "addressLocality": "Варна",
+        "postalCode": "9009",
+        "addressCountry": "BG"
+      },
+      "telephone": "+359899109431",
+      "email": "office@aspectprobulgaria.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "url": "https://www.aspectprobulgaria.com",
+      "priceRange": "BGN"
+    }
+    </script>
     <style>
+      /* Visible styles */
       body {
         margin: 0;
         padding: 0;
@@ -55,55 +85,22 @@
         background-size: 200% 200%;
       }
       @keyframes shimmer {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
-      .message::before {
+      .message::before,
+      .message::after {
         content: "";
         position: absolute;
-        top: 0;
-        left: -100%;
         width: 100%;
         height: 4px;
         background: linear-gradient(90deg, #ff6b6b, #feca57, #1dd1a1, #5f27cd);
         animation: rainbow 3s linear infinite;
       }
-      .message::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: -100%;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #5f27cd, #1dd1a1, #feca57, #ff6b6b);
-        animation: rainbow 3s linear infinite reverse;
-      }
-      @keyframes rainbow {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(200%);
-        }
-      }
-      @media (max-width: 768px) {
-        .message {
-          font-size: 1.8rem;
-          padding: 20px;
-        }
-        .logo-container {
-          width: 100px;
-          height: 100px;
-          margin-bottom: 30px;
-        }
-      }
+      .message::before { top: 0; left: -100%; }
+      .message::after { bottom: 0; right: -100%; animation-direction: reverse; }
+      @keyframes rainbow { 0% { transform: translateX(0); } 100% { transform: translateX(200%); } }
       .footer {
         position: fixed;
         bottom: 20px;
@@ -117,27 +114,69 @@
         max-width: 90%;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       }
+      /* Hidden SEO elements for Google */
+      .seo-hidden { position: absolute; left: -9999px; top: -9999px; }
+      .seo-nav, .seo-sections { display: none; }
+      @media (max-width: 768px) {
+        .message { font-size: 1.8rem; padding: 20px; }
+        .logo-container { width: 100px; height: 100px; margin-bottom: 30px; }
+      }
     </style>
   </head>
   <body>
+    <!-- Invisible H1 for SEO -->
+    <h1 class="seo-hidden">Аспект Про България ЕООД</h1>
+
+    <!-- Visible Logo & Message -->
     <div class="logo-container">
-      <!-- SVG logo - Replace with actual SVG or use img tag to reference external file -->
-      <img
-        src="aspro.svg"
-        alt="Аспект Про България Logo"
-        width="100"
-        height="100"
-      />
+      <img src="aspro.svg" alt="Аспект Про България Logo" width="100" height="100" />
     </div>
-
     <div class="message">
-      <span>Подготвяме нещо специално за Вас</span>
+      <span>Подготвяме нещо специално за вас</span>
     </div>
 
+    <!-- Invisible Navigation for Google -->
+    <nav class="seo-nav">
+      <ul>
+        <li><a href="#about">За нас</a></li>
+        <li><a href="#products">Продукти</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <!-- Invisible Content Sections for Google -->
+    <div class="seo-sections">
+      <section id="about">
+        <h2>За Аспект Про България</h2>
+        <p>Аспект Про България ЕООД доставя търговско оборудване и софтуерни решения за растеж на вашия бизнес.</p>
+      </section>
+      <section id="products">
+        <h2>Продукти</h2>
+        <ul>
+          <li>Стелажи за магазини</li>
+          <li>Касови модули</li>
+          <li>Оборудване за касови модули</li>
+          <li>Сейфове за банкноти</li>
+          <li>Етикетиране и маркиращи клещи</li>
+          <li>Кошници за пазаруване</li>
+        </ul>
+      </section>
+      <section id="contact">
+        <h2>Контакти</h2>
+        <address>
+          ул. “Радост” № 9, вх. A, маг. 3, 9009 Варна, България<br />
+          Тел: <a href="tel:+359899109431">+359 899 10 94 31</a><br />
+          Email: <a href="mailto:office@aspectprobulgaria.com">office@aspectprobulgaria.com</a>
+        </address>
+        <p>Работно време: Понеделник–Петък, 9:00–18:00</p>
+      </section>
+    </div>
+
+    <!-- Footer -->
     <div class="footer">
       Аспект Про България ЕООД<br />
       Телефонен номер: +359899109431<br />
-      Адрес: ул. "Радост" 9, маг 3, 9009 Варна, България
+      Адрес: ул. "Поп Харитон" 35, маг 3, 9000 Варна, България
     </div>
   </body>
 </html>
